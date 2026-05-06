@@ -512,7 +512,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <Card className="bg-primary-600 p-12 md:p-20 relative overflow-hidden border-none">
+          <Card className="bg-primary-600 p-12 md:p-20 relative overflow-hidden border-none shadow-2xl">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-white/10 -skew-x-12 translate-x-1/2" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
@@ -524,12 +524,12 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link to="/doctors/signup">
-                    <Button variant="secondary" size="lg" className="bg-white text-primary-600 border-none px-10">
+                    <Button variant="secondary" size="lg" className="bg-white text-primary-600 border-none px-10 hover:bg-slate-50 transition-colors">
                       Register Now
                     </Button>
                   </Link>
                   <Link to="/doctors">
-                    <Button variant="outline" size="lg" className="text-white border-white hover:bg-white/10 px-10">
+                    <Button variant="outline" size="lg" className="text-white border-white hover:bg-white/10 px-10 transition-colors">
                       Learn More
                     </Button>
                   </Link>
@@ -538,7 +538,7 @@ export default function Home() {
               <div className="hidden lg:flex justify-end">
                 <div className="bg-white/20 backdrop-blur-md p-8 rounded-3xl border border-white/30 space-y-6 max-w-sm">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-green-400 rounded-full flex items-center justify-center text-white">
+                    <div className="w-12 h-12 bg-emerald-400 rounded-full flex items-center justify-center text-white shadow-lg">
                       <ShieldCheck size={24} />
                     </div>
                     <div>
@@ -547,7 +547,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center text-white">
+                    <div className="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center text-white shadow-lg">
                       <Star size={24} />
                     </div>
                     <div>
@@ -556,7 +556,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-teal-400 rounded-full flex items-center justify-center text-white">
+                    <div className="w-12 h-12 bg-sky-400 rounded-full flex items-center justify-center text-white shadow-lg">
                       <Clock size={24} />
                     </div>
                     <div>

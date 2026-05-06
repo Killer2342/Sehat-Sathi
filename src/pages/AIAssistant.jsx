@@ -163,35 +163,37 @@ export default function AIAssistant() {
                   </div>
                 </Card>
 
-                <Card className="p-8 border-none shadow-premium bg-gradient-to-br from-white to-slate-50 space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600">
-                      <User size={20} />
+                {result.doctor && (
+                  <Card className="p-8 border-none shadow-premium bg-gradient-to-br from-white to-slate-50 space-y-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600">
+                        <User size={20} />
+                      </div>
+                      <h3 className="text-xl font-bold text-slate-900">Recommended Doctor</h3>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">Recommended Doctor</h3>
-                  </div>
-                  <div className="flex gap-4">
-                    <img 
-                      src={result.doctor.image} 
-                      className="w-20 h-20 rounded-2xl object-cover border-2 border-white shadow-md"
-                      alt={result.doctor.name}
-                    />
-                    <div>
-                      <h4 className="text-xl font-bold text-slate-900">{result.doctor.name}</h4>
-                      <p className="text-sm text-slate-500 font-medium mb-2">{result.doctor.clinic}</p>
-                      <div className="flex items-center gap-1.5 text-slate-400 text-xs font-bold uppercase">
-                        <HeartPulse size={12} />
-                        {result.doctor.specialty}
+                    <div className="flex gap-4">
+                      <img 
+                        src={result.doctor.profile_image || "https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=800"} 
+                        className="w-20 h-20 rounded-2xl object-cover border-2 border-white shadow-md"
+                        alt={result.doctor.name}
+                      />
+                      <div>
+                        <h4 className="text-xl font-bold text-slate-900">{result.doctor.name}</h4>
+                        <p className="text-sm text-slate-500 font-medium mb-2">{result.doctor.clinic_name}</p>
+                        <div className="flex items-center gap-1.5 text-slate-400 text-xs font-bold uppercase">
+                          <HeartPulse size={12} />
+                          {result.doctor.specialty}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <Link to={`/doctor/${result.doctor.id}`}>
-                    <Button className="w-full mt-2 gap-2">
-                      View Profile & Book
-                      <ArrowRight size={18} />
-                    </Button>
-                  </Link>
-                </Card>
+                    <Link to={`/doctor/${result.doctor.id}`}>
+                      <Button className="w-full mt-2 gap-2">
+                        View Profile & Book
+                        <ArrowRight size={18} />
+                      </Button>
+                    </Link>
+                  </Card>
+                )}
               </div>
 
               <Card className="p-8 bg-slate-900 text-white border-none shadow-xl overflow-hidden relative">

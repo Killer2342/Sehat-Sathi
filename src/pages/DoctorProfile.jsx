@@ -441,7 +441,7 @@ export default function DoctorProfile() {
                         </div>
                         <div className="flex justify-between text-sm">
                           <span className="text-slate-400">Clinic:</span>
-                          <span className="font-bold text-slate-900">{doctor.clinic}</span>
+                          <span className="font-bold text-slate-900">{doctor.clinic_name}</span>
                         </div>
                         <div className="flex justify-between text-sm">
                           <span className="text-slate-400">Time:</span>
