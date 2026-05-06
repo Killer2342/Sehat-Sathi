@@ -25,7 +25,10 @@ export default function DoctorSignUp() {
     city: 'Bannu',
     clinic_name: '',
     clinic_address: '',
-    bio: ''
+    bio: '',
+    languages: '',
+    awards: '',
+    publications: ''
   })
   const [profileImage, setProfileImage] = useState(null)
   const [clinicImage, setClinicImage] = useState(null)
@@ -104,6 +107,9 @@ export default function DoctorSignUp() {
               clinic_name: formData.clinic_name,
               clinic_address: formData.clinic_address,
               bio: formData.bio,
+              languages: formData.languages ? formData.languages.split(',').map(s => s.trim()) : [],
+              awards: formData.awards ? formData.awards.split(',').map(s => s.trim()) : [],
+              publications: formData.publications ? formData.publications.split(',').map(s => s.trim()) : [],
               profile_image: profileUrl,
               clinic_image: clinicUrl,
               status: 'pending'
@@ -227,6 +233,29 @@ export default function DoctorSignUp() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 transition-all outline-none text-slate-900 placeholder:text-slate-400 h-32 resize-none"
                       placeholder="Tell patients about your practice..."
+                    />
+                  </div>
+                  <div className="md:col-span-2 space-y-4">
+                    <Input 
+                      label="Languages (comma separated)" 
+                      name="languages" 
+                      value={formData.languages} 
+                      onChange={handleChange} 
+                      placeholder="English, Urdu, Pashto" 
+                    />
+                    <Input 
+                      label="Awards & Recognition (comma separated)" 
+                      name="awards" 
+                      value={formData.awards} 
+                      onChange={handleChange} 
+                      placeholder="Best Doctor 2023, Health Excellence Award" 
+                    />
+                    <Input 
+                      label="Publications (comma separated)" 
+                      name="publications" 
+                      value={formData.publications} 
+                      onChange={handleChange} 
+                      placeholder="Modern Cardiology (2022), Clinical Study on Hypertension" 
                     />
                   </div>
                 </div>
